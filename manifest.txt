@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: postgresql-42.7.7.jar
+Created-By: Enterprise Banking System v1.0.0

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Banking System - Professional JavaFX Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .features {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature-card p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+
+        .tech-stack h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tech-item .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .tech-item p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .demo-content {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .demo-content p {
+            font-size: 1.2rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🏦 Enterprise Banking System</h1>
+            <p>A professional-grade banking management application built with JavaFX and PostgreSQL</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/yourusername/enterprise-banking-system" class="btn btn-primary">🚀 View on GitHub</a>
+                <a href="#features" class="btn btn-secondary">📋 Learn More</a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features" id="features">
+            <h2>✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Secure Authentication</h3>
+                    <p>Multi-role access control with Admin, Cashier, and Auditor roles. SHA-256 password hashing and secure session management.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏛️</div>
+                    <h3>Account Management</h3>
+                    <p>Create and manage Savings and Current accounts with business rule enforcement, balance validation, and real-time updates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Transaction Processing</h3>
+                    <p>Handle deposits, withdrawals, and transfers with comprehensive validation, status tracking, and complete audit trails.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard & Analytics</h3>
+                    <p>Real-time statistics, visual cards, system status monitoring, and quick access to common banking operations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Reports & Analytics</h3>
+                    <p>Generate comprehensive reports with customizable date ranges, formats, and pre-built templates for common banking reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>System Settings</h3>
+                    <p>Configure user preferences, security settings, system information, and performance monitoring with an intuitive interface.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="tech-stack">
+            <h2>🛠️ Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="icon">☕</div>
+                    <h4>Java 22</h4>
+                    <p>Latest OpenJDK with modern language features</p>
+                </div>
+                <div class="tech-item">
+                    <div class="icon">🖥️</div>
+                    <h4>JavaFX 24.0.1</h4>
+                    <p>Modern desktop UI framework</p>
+                </div>
+                <div class="tech-item">
+                    <div class="icon">🗄️</div>
+                    <h4>PostgreSQL 15.4</h4>
+                    <p>Enterprise-grade database system</p>
+                </div>
+                <div class="tech-item">
+                    <div class="icon">🏗️</div>
+                    <h4>MVC Architecture</h4>
+                    <p>Clean separation of concerns</p>
+                </div>
+                <div class="tech-item">
+                    <div class="icon">🔒</div>
+                    <h4>Security Features</h4>
+                    <p>SHA-256 hashing & role-based access</p>
+                </div>
+                <div class="tech-item">
+                    <div class="icon">📱</div>
+                    <h4>Responsive Design</h4>
+                    <p>Professional UI for all screen sizes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Section -->
+        <div class="demo-section">
+            <h2>🎯 Live Demo</h2>
+            <div class="demo-content">
+                <p>This is a desktop application that runs locally on your machine. To see it in action:</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/yourusername/enterprise-banking-system#getting-started" class="btn btn-primary">📖 Setup Instructions</a>
+                    <a href="https://github.com/yourusername/enterprise-banking-system/releases" class="btn btn-secondary">⬇️ Download Latest Release</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Enterprise Banking System. Built with ❤️ using modern Java development practices.</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername/enterprise-banking-system" title="GitHub">📁</a>
+                <a href="https://github.com/yourusername/enterprise-banking-system/issues" title="Issues">🐛</a>
+                <a href="https://github.com/yourusername/enterprise-banking-system/pulls" title="Pull Requests">🔀</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
