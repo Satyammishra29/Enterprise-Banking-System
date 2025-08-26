@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      spacing="25" style="-fx-padding: 30; -fx-background-color: #f8f9fa;">
+    
+    <!-- Header Section -->
+    <VBox spacing="10">
+        <Label text="Enterprise Banking Dashboard" 
+               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="Real-time overview of your banking operations" 
+               style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+    </VBox>
+    
+    <!-- Statistics Cards -->
+    <HBox spacing="20" alignment="TOP_LEFT">
+        <!-- Total Accounts Card -->
+        <VBox style="-fx-background-color: #3498db; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 250; -fx-pref-height: 180;" 
+               alignment="CENTER" spacing="15">
+            <Label text="📊" style="-fx-font-size: 40px;"/>
+            <Label text="Total Accounts" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="1,247" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="+12 this month" style="-fx-font-size: 14px; -fx-text-fill: #bdc3c7;"/>
+        </VBox>
+        
+        <!-- Total Balance Card -->
+        <VBox style="-fx-background-color: #27ae60; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 250; -fx-pref-height: 180;" 
+               alignment="CENTER" spacing="15">
+            <Label text="💳" style="-fx-font-size: 40px;"/>
+            <Label text="Total Balance" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="$45.2M" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="+8.5% vs last month" style="-fx-font-size: 14px; -fx-text-fill: #bdc3c7;"/>
+        </VBox>
+        
+        <!-- Transactions Card -->
+        <VBox style="-fx-background-color: #f39c12; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 250; -fx-pref-height: 180;" 
+               alignment="CENTER" spacing="15">
+            <Label text="📈" style="-fx-font-size: 40px;"/>
+            <Label text="Today's Transactions" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="892" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="+23% vs yesterday" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+        
+        <!-- Active Users Card -->
+        <VBox style="-fx-background-color: #9b59b6; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 250; -fx-pref-height: 180;" 
+               alignment="CENTER" spacing="15">
+            <Label text="👥" style="-fx-font-size: 40px;"/>
+            <Label text="Active Users" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="156" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Online now" style="-fx-font-size: 14px; -fx-text-fill: #bdc3c7;"/>
+        </VBox>
+    </HBox>
+    
+    <!-- System Status Section -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" spacing="20">
+        <Label text="System Status" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="40">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🟢" style="-fx-font-size: 20px;"/>
+                    <Label text="Database Connection" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Connected" style="-fx-font-size: 16px; -fx-text-fill: #27ae60;"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🟢" style="-fx-font-size: 20px;"/>
+                    <Label text="Security Module" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Active" style="-fx-font-size: 16px; -fx-text-fill: #27ae60;"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🟢" style="-fx-font-size: 20px;"/>
+                    <Label text="Transaction Engine" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Running" style="-fx-font-size: 16px; -fx-text-fill: #27ae60;"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🟢" style="-fx-font-size: 20px;"/>
+                    <Label text="Audit System" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Label text="Monitoring" style="-fx-font-size: 16px; -fx-text-fill: #27ae60;"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+    
+    <!-- Quick Actions Section -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" spacing="20">
+        <Label text="Quick Actions" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="20">
+            <Button text="➕ Create Account" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 180; -fx-background-radius: 10;"/>
+            <Button text="💸 New Transaction" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 180; -fx-background-radius: 10;"/>
+            <Button text="📊 Generate Report" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 180; -fx-background-radius: 10;"/>
+            <Button text="⚙️ System Settings" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 180; -fx-background-radius: 10;"/>
+        </HBox>
+    </VBox>
+    
+</VBox>

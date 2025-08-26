@@ -1,0 +1,10 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+.button {
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+.table-view {
+    -fx-border-radius: 5;
+}

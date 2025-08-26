@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      spacing="25" style="-fx-padding: 30; -fx-background-color: #f8f9fa;">
+    
+    <!-- Header Section -->
+    <VBox spacing="10">
+                        <Label text="Reports and Analytics"  
+               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="Generate comprehensive reports and analyze banking data" 
+               style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+    </VBox>
+    
+    <!-- Main Content Area -->
+    <HBox spacing="25" alignment="TOP_LEFT">
+        
+        <!-- Report Generation Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="Generate Report" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <Label text="Report Type:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <ComboBox promptText="Select report type" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                
+                <Label text="Date Range:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="10">
+                    <DatePicker promptText="From Date" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                    <DatePicker promptText="To Date" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                </HBox>
+                
+                <Label text="Format:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <ComboBox promptText="Select format" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                
+                <Button text="📊 Generate Report" 
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-background-radius: 10; -fx-pref-width: 200;"/>
+            </VBox>
+        </VBox>
+        
+        <!-- Quick Statistics Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="Quick Statistics" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📈" style="-fx-font-size: 24px;"/>
+                    <VBox>
+                        <Label text="Total Transactions" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="15,847" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="💰" style="-fx-font-size: 24px;"/>
+                    <VBox>
+                        <Label text="Total Volume" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="$2.4B" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="👥" style="-fx-font-size: 24px;"/>
+                    <VBox>
+                        <Label text="Active Users" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="1,247" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+        
+        <!-- Recent Reports Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="Recent Reports" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="10">
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📄" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Monthly Transaction Report" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Generated: 2 hours ago" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📊" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Account Balance Summary" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Generated: 1 day ago" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📈" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="User Activity Report" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Generated: 3 days ago" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+    
+    <!-- Report Templates Section -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" spacing="20">
+        <Label text="Report Templates" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="20">
+            <Button text="📊 Transaction Summary" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="💰 Balance Report" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="👥 User Activity" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="🔒 Security Audit" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+        </HBox>
+    </VBox>
+    
+</VBox>

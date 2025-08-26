@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      spacing="25" style="-fx-padding: 30; -fx-background-color: #f8f9fa;">
+    
+    <!-- Header Section -->
+    <VBox spacing="10">
+        <Label text="System Settings" 
+               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="Configure system preferences and security settings" 
+               style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+    </VBox>
+    
+    <!-- Main Content Area -->
+    <HBox spacing="25" alignment="TOP_LEFT">
+        
+        <!-- User Preferences Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="User Preferences" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <Label text="Theme:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <ComboBox promptText="Select theme" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                
+                <Label text="Language:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <ComboBox promptText="Select language" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                
+                <Label text="Session Timeout:" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <ComboBox promptText="Select timeout" style="-fx-pref-height: 40; -fx-background-radius: 8;"/>
+                
+                <CheckBox text="Enable Notifications" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <CheckBox text="Auto-logout on inactivity" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                
+                <Button text="💾 Save Preferences" 
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 200; -fx-background-radius: 10;"/>
+            </VBox>
+        </VBox>
+        
+        <!-- Security Settings Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="Security Settings" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="🔒" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Password Policy" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Strong (8+ chars, symbols)" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="🔐" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Two-Factor Authentication" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Enabled for all users" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📱" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Login Notifications" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="SMS and Email alerts" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </HBox>
+                
+                <Button text="🔒 Update Security" 
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-pref-height: 45; -fx-pref-width: 200; -fx-background-radius: 10;"/>
+            </VBox>
+        </VBox>
+        
+        <!-- System Information Panel -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25; -fx-pref-width: 400;" spacing="20">
+            <Label text="System Information" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <VBox spacing="15">
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📋" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Application Version" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="v2.1.0 Enterprise" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="📅" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Build Date" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="2024-01-15" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="☕" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Java Version" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="OpenJDK 22" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                    </VBox>
+                </HBox>
+                
+                <HBox style="-fx-background-color: #ecf0f1; -fx-background-radius: 10; -fx-padding: 15;" spacing="15" alignment="CENTER_LEFT">
+                    <Label text="🗄️" style="-fx-font-size: 20px;"/>
+                    <VBox>
+                        <Label text="Database" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="PostgreSQL 15.4" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+    
+    <!-- System Actions Section -->
+    <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;" spacing="20">
+        <Label text="System Actions" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="20">
+            <Button text="🔄 Refresh System" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="📊 System Health" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="🔍 Audit Logs" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+            <Button text="⚡ Performance" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-pref-height: 40; -fx-pref-width: 160; -fx-background-radius: 8;"/>
+        </HBox>
+    </VBox>
+    
+</VBox>

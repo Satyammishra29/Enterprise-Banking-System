@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20" alignment="TOP_CENTER" prefWidth="800" prefHeight="650"
+      fx:controller="controller.MainViewController"
+      style="-fx-background-color: #f8f9fa;">
+    <Label text="🏦 Transaction Management System"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-padding: 20 0 10 0;"/>
+    <HBox spacing="30" alignment="CENTER">
+        <TitledPane text="Create Account" expanded="true">
+            <GridPane hgap="10" vgap="10" style="-fx-padding: 15;">
+                <Label text="Holder Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="nameField" promptText="e.g. John Doe" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Account Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="accountNumberField" promptText="e.g. 123456" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Initial Balance:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="initialBalanceField" promptText="e.g. 1000" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Account Type:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="accountTypeBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Button text="Create Account" fx:id="createAccountBtn" GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-background-color: #007bff; -fx-text-fill: white;"/>
+            </GridPane>
+        </TitledPane>
+        <TitledPane text="Transaction" expanded="true">
+            <GridPane hgap="10" vgap="10" style="-fx-padding: 15;">
+                <Label text="Account Number:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="transAccountNumberField" promptText="e.g. 123456" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="amountField" promptText="e.g. 500" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                    <Button text="Deposit" fx:id="depositBtn" style="-fx-background-color: #28a745; -fx-text-fill: white;"/>
+                    <Button text="Withdraw" fx:id="withdrawBtn" style="-fx-background-color: #dc3545; -fx-text-fill: white;"/>
+                </HBox>
+            </GridPane>
+        </TitledPane>
+    </HBox>
+    <Label text="All Accounts" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <TableView fx:id="accountsTable" prefHeight="300" prefWidth="700" style="-fx-background-color: white; -fx-border-color: #dee2e6;">
+        <columns>
+            <TableColumn fx:id="colAccountNumber" text="Account Number" prefWidth="150"/>
+            <TableColumn fx:id="colHolderName" text="Holder Name" prefWidth="150"/>
+            <TableColumn fx:id="colAccountType" text="Type" prefWidth="100"/>
+            <TableColumn fx:id="colBalance" text="Balance" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <Label text="Tip: Fill all fields before creating an account or making a transaction."
+           style="-fx-font-size: 12px; -fx-text-fill: #6c757d; -fx-padding: 10 0 0 0;"/>
+</VBox>

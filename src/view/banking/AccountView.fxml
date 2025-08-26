@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.banking.BankingController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <Label text="Account Management" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #343a40;"/>
+    
+    <HBox spacing="20" alignment="TOP_LEFT">
+        <!-- Create Account Section -->
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" prefWidth="400">
+            <Label text="Create New Account" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #007bff;"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <Label text="Account Number:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="accountNumberField" promptText="e.g. SAV003" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+                
+                <Label text="Holder Name:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="holderNameField" promptText="e.g. John Doe" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Label text="Account Type:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="accountTypeComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="200"/>
+                
+                <Label text="Initial Balance:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="initialBalanceField" promptText="e.g. 1000" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+                <Button fx:id="createAccountButton" text="Create Account" GridPane.rowIndex="4" GridPane.columnIndex="1" 
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 35; -fx-background-radius: 5;"/>
+            </GridPane>
+        </VBox>
+        
+        <!-- Transaction Section -->
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" prefWidth="400">
+            <Label text="Perform Transaction" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffc107;"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <Label text="Account Number:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="depositAccountField" promptText="e.g. SAV001" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+                
+                <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="depositAmountField" promptText="e.g. 500" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Button fx:id="depositButton" text="Deposit" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                        style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 35; -fx-background-radius: 5;"/>
+            </GridPane>
+            
+            <Separator style="-fx-padding: 10 0;"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <Label text="Account Number:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="withdrawAccountField" promptText="e.g. CUR001" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200"/>
+                
+                <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="withdrawAmountField" promptText="e.g. 200" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Button fx:id="withdrawButton" text="Withdraw" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                        style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 35; -fx-background-radius: 5;"/>
+            </GridPane>
+        </VBox>
+    </HBox>
+    
+    <!-- Accounts Table -->
+    <VBox spacing="10">
+        <Label text="All Accounts" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #343a40;"/>
+        <TableView fx:id="accountsTable" prefHeight="300" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            <columns>
+                <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="150"/>
+                <TableColumn fx:id="holderNameColumn" text="Holder Name" prefWidth="150"/>
+                <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="100"/>
+                <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+    
+    <!-- Status Messages -->
+    <Label fx:id="statusLabel" text="" style="-fx-font-size: 14px; -fx-text-fill: #6c757d; -fx-alignment: CENTER;"/>
+</VBox>
